@@ -1,12 +1,14 @@
+
+
 const Footer = () => {
   return (
     <div>
-      <div>By Rupok Ghosh Adin</div>
+      <div>a project by rupok</div>
       <div>
         <button>Youtube</button>
         <button>Github</button>
       </div>
-      <div>Design inspired by Eduarda Mirelly</div>
+      <div>design inspired by eduarda mirelly</div>
     </div>
   );
 };
