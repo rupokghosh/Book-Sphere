@@ -2,34 +2,25 @@ import { Link } from "react-router-dom";
 import logo from "../assets/BookOpen.png";
 import favoritesIcon from "../assets/BOOKMARK_SIMPLE.png";
 import shoppingCartIcon from "../assets/SHOPPING_CART.png";
-import { Box } from "@chakra-ui/react";
 
 const Header = () => {
   return (
-    <Box display="flex" justifyContent="space-between" bg="tomato" m="0" p="0">
-      <Box
-        className="logo"
-        display="flex"
-        justifyContent="space-around"
-        gap={2}
-      >
+    <div className="flex justify-between items-center mt-4 mx-6">
+      <div className="logo flex flex-row gap-2 justify-evenly items-center">
         <img src={logo} alt="" />
-        <Link to="/">BOOKSPHERE</Link>
-      </Box>
-      <Box
-        className="navLinks"
-        display="flex"
-        justifyContent="space-around"
-        gap={2}
-      >
+        <Link to="/" className="">
+          BOOKSPHERE
+        </Link>
+      </div>
+      <div className="navLinks flex flex-row gap-6 justify-evenly items-center">
         <Link to="/Favorites">
           <img src={favoritesIcon} alt="" />
         </Link>
         <button>
           <img src={shoppingCartIcon} alt="" />
         </button>
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 
