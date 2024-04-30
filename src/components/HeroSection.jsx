@@ -9,22 +9,22 @@ const HeroSection = () => {
           </h1>
           <p>Explore our library and find your next read. </p>
         </div>
-        <div className="search flex flex-col gap-4 justify-center">
+        <div className="search flex flex-col gap-6 justify-start items-start">
           <input
             type="text"
-            placeholder="search..."
-            className="rounded-full shadow-lg shadow-beige-500 w-full"
+            placeholder="Search..."
+            className="rounded-full shadow-lg shadow-beige-500 border border-zinc-950 px-20 py-1"
           />
-          <button className="rounded-md bg-beige-300 hover:bg-blue-500 w-1/2">
-            Search
+          <button className="rounded-full bg-beige-300 hover:bg-beige-500 border border-zinc-950 px-4 py-1">
+            explore
           </button>
         </div>
       </div>
       <div className="bigPicture bg-green flex justify-center align-center">
         <img
           src={bookCover}
-          alt="books"
-          className="object-cover w-64 h-64 rounded-md shadow-lg shadow-beige-500 m-8"
+          alt="books" 
+          className="object-cover w-64 h-64 rounded-md shadow-gxl shadow-beige-500 m-8"
         />
       </div>
     </div>
