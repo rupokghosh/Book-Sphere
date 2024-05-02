@@ -4,3 +4,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main {
+  margin: 0;
+  padding: 0;
+}
+
+.customShadow {
+  box-shadow: 5px 5px #dac0a3;
+}
+
+.customShadow2 {
+  box-shadow: -16px -16px #dac0a3;
+}
