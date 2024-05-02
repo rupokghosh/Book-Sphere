@@ -1,4 +1,6 @@
 import bookCover from "../assets/bookCover.jpg";
+import "../index.css";
+
 const HeroSection = () => {
   return (
     <div className="flex justify-evenly m-4">
@@ -13,7 +15,7 @@ const HeroSection = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="rounded-full shadow-lg shadow-beige-500 border border-zinc-950 px-20 py-1"
+            className=" customShadow rounded-full border border-zinc-950 px-20 py-1"
           />
           <button className="rounded-full bg-beige-300 hover:bg-beige-500 border border-zinc-950 px-4 py-1">
             explore
@@ -23,8 +25,8 @@ const HeroSection = () => {
       <div className="bigPicture bg-green flex justify-center align-center">
         <img
           src={bookCover}
-          alt="books" 
-          className="object-cover w-64 h-64 rounded-md shadow-gxl shadow-beige-500 m-8"
+          alt="books"
+          className="object-cover w-64 h-64 rounded-md customShadow2 m-8"
         />
       </div>
     </div>
