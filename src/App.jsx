@@ -1,6 +1,10 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Home from "./pages/Home";
+import HeroSection from "./components/HeroSection";
+import TrendingBooks from "./components/TrendingBooks";
+import Categories from "./components/Categories";
+import BestSellersThisWeek from "./components/BestSellersThisWeek";
+import CallToAction from "./components/CallToAction";
 import "./index.css";
 import fetchData from "./utils/fetchData.js";
 import { useEffect, useState } from "react";
@@ -14,7 +18,11 @@ function App() {
   return (
     <div className="main " style={{ fontFamily: "Unica One" }}>
       <Header />
-      <Home />
+      <HeroSection />
+      <TrendingBooks />
+      <Categories />
+      <BestSellersThisWeek />
+      <CallToAction />
       <Footer />
     </div>
   );
