@@ -8,6 +8,7 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
+      <h1 className="bold text-2xl text-center mt-4">Trending Books</h1>
       <TrendingBooks />
       <Categories />
       <BestSellersThisWeek />
