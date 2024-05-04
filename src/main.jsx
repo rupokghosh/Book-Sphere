@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage.jsx";
 import Favorites from "./pages/Favorites.jsx";
 import Catalog from "./pages/Catalog.jsx";
 import PurchaseDone from "./pages/PurchaseDone.jsx";
+import BookDetail from "./pages/BookDetail.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -15,16 +16,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/Favorites", 
-    element: <Favorites/>
-  }, 
+    path: "/Favorites",
+    element: <Favorites />,
+  },
   {
-    path: "/Catalog", 
-    element: <Catalog/>
-  }, 
+    path: "/Catalog",
+    element: <Catalog />,
+  },
   {
-    path: "/PurchaseDone", 
-    element: <PurchaseDone/>
+    path: "/PurchaseDone",
+    element: <PurchaseDone />,
+  },
+  {
+    path: "/Book/:id", 
+    element: <BookDetail/>
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
