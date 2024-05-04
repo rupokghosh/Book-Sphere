@@ -1,11 +1,12 @@
 import bookMark from "../assets/BOOKMARK_SIMPLE.png";
 import shoppingCart from "../assets/SHOPPING_CART.png";
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ cover, price }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <img
-        className="object-cover rounded-lg shadow-xl shadow-gray-900 w-64 h-80"
+        className="object-cover rounded-lg shadow-xl shadow-gray-900 w-48 h-64"
         src={cover}
         alt=""
       />
