@@ -1,5 +1,14 @@
 const Categories = () => {
-  return <div>Categories</div>;
+  return (
+    <div>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  );
 };
 
 export default Categories;
