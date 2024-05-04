@@ -13,7 +13,7 @@ const ErrorPage = () => {
         <h4 className="text-md">Please refresh the page or try again later</h4>
       </div>
 
-      <Link className="rounded-full bg-beige-300 px-24 py-2 border border-zinc-950 hover:bg-beige-500  ">
+      <Link to="/" className="rounded-full bg-beige-300 px-24 py-2 border border-zinc-950 hover:bg-beige-500  ">
         Go back Home
       </Link>
     </div>
