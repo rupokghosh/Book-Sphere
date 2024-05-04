@@ -7,7 +7,7 @@ import itendswithus from "../assets/itendswithus copy.jpg";
 
 const TrendingBooks = () => {
   return (
-    <div className="flex justify-center items-center gap-6 mt-4">
+    <div className="flex justify-evenly items-center gap-6 mt-4 mx-64">
       <Card cover={meditations} price="10.99" />
       <Card cover={ikigai} price="12.99" />
       <Card cover={mdw} price="20.99" />
