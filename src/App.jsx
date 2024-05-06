@@ -12,14 +12,17 @@ import { useEffect, useState } from "react";
 
 function App() {
   // states
+  // Toggling Cart Logic
   const [openCart, setOpenCart] = useState(false);
 
   function toggleCart() {
     setOpenCart(!openCart);
   }
+
   useEffect(() => {
     fetchData("meditations");
   }, []);
+
   return (
     <div className="main " style={{ fontFamily: "Unica One" }}>
       <Header toggleCart={toggleCart} />
