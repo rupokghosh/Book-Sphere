@@ -13,12 +13,18 @@ const Catalog = () => {
     "non-fiction",
     "fiction",
   ];
+
+  // states and fetching
+
   return (
     <div style={{ fontFamily: "Unica One" }}>
       <Header />
       <main>
-        <div className="flex flex-col justify-center items-center mt-6">
+        <div className="flex justify-center items-center self-center gap-4 mt-6">
           <Search />
+          <button className="rounded-full bg-beige-300 hover:bg-beige-500 border border-zinc-950 px-4 py-1">
+            search
+          </button>
         </div>
         <div className="resultAndCategories flex justify-between items-center mx-8 mb-4 mt-12">
           <h1 className="text-xl">RESULTS</h1>

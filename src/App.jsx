@@ -19,6 +19,8 @@ function App() {
     setOpenCart(!openCart);
   }
 
+  // fetchData
+
   useEffect(() => {
     fetchData("meditations");
   }, []);
