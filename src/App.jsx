@@ -5,19 +5,25 @@ import TrendingBooks from "./components/TrendingBooks";
 import Categories from "./components/Categories";
 import BestSellersThisWeek from "./components/BestSellersThisWeek";
 import CallToAction from "./components/CallToAction";
+import Cart from "./components/Cart.jsx";
 import "./index.css";
 import fetchData from "./utils/fetchData.js";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [data, setData] = useState(null);
+  // states
+  const [openCart, setOpenCart] = useState(false);
 
+  function toggleCart() {
+    setOpenCart(!openCart);
+  }
   useEffect(() => {
     fetchData("meditations");
   }, []);
   return (
     <div className="main " style={{ fontFamily: "Unica One" }}>
-      <Header />
+      <Header toggleCart={toggleCart} />
+      {openCart && <Cart />}
       <HeroSection />
       <TrendingBooks />
       <Categories />

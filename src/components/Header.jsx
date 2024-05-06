@@ -3,7 +3,7 @@ import logo from "../assets/BookOpen.png";
 import favoritesIcon from "../assets/BOOKMARK_SIMPLE.png";
 import shoppingCartIcon from "../assets/SHOPPING_CART.png";
 
-const Header = () => {
+const Header = ({ toggleCart }) => {
   return (
     <div className="flex justify-between items-center mt-4 mx-6">
       <div className="logo flex flex-row gap-2 justify-evenly items-center">
@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/Favorites">
           <img src={favoritesIcon} alt="" />
         </Link>
-        <button>
+        <button onClick={toggleCart}>
           <img src={shoppingCartIcon} alt="" />
         </button>
       </div>
