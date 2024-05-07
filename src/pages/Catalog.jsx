@@ -16,13 +16,32 @@ const Catalog = () => {
 
   // states and fetching
 
+  const [query, setQuery] = useState("");
+  const [data, setdata] = useState(null);
+
+  function handleBtnClick() {
+    fetchData();
+  }
+
+  const fetchData = (query) => {
+    fetch(`https://openlibrary.org/search.json?q= + ${query} `)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setdata(data);
+      });
+  };
+
   return (
     <div style={{ fontFamily: "Unica One" }}>
       <Header />
       <main>
         <div className="flex justify-center items-center self-center gap-4 mt-6">
-          <Search />
-          <button className="rounded-full bg-beige-300 hover:bg-beige-500 border border-zinc-950 px-4 py-1">
+          <Search setValue={setQuery} value={query} />
+          <button
+            className="rounded-full bg-beige-300 hover:bg-beige-500 border border-zinc-950 px-4 py-1"
+            onClick={handleBtnClick}
+          >
             search
           </button>
         </div>
@@ -41,7 +60,9 @@ const Catalog = () => {
           </select>
         </div>
         <hr style={{ border: "1.5px dashed black", margin: "34px" }} />
-        <div className="allBooks"></div>
+        <div className="allBooks">
+    
+        </div>
       </main>
       <Footer />
     </div>
