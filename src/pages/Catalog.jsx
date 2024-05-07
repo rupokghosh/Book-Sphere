@@ -1,7 +1,9 @@
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import Search from "../components/Search.jsx";
+import Card from "../components/Card.jsx";
 import "../index.css";
+import { useState } from "react";
 
 const Catalog = () => {
   const categories = [
@@ -19,12 +21,17 @@ const Catalog = () => {
   const [query, setQuery] = useState("");
   const [data, setdata] = useState(null);
 
+  // fetch data on button click
+
   function handleBtnClick() {
     fetchData();
   }
 
-  const fetchData = (query) => {
-    fetch(`https://openlibrary.org/search.json?q= + ${query} `)
+  // fetchData function
+
+  const fetchData = () => {
+    console.log(query);
+    fetch(`https://openlibrary.org/search.json?q= ${query} &limit=20 `)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -60,9 +67,7 @@ const Catalog = () => {
           </select>
         </div>
         <hr style={{ border: "1.5px dashed black", margin: "34px" }} />
-        <div className="allBooks">
-    
-        </div>
+        <div className="allBooks"></div>
       </main>
       <Footer />
     </div>
