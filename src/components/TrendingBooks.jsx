@@ -1,9 +1,4 @@
 import Card from "./Card.jsx";
-import meditations from "../assets/meditations.jpg";
-import ikigai from "../assets/ikigai.jpg";
-import mdw from "../assets/mdw.jpg";
-import aliabdaal from "../assets/aliabdaal.jpg";
-import itendswithus from "../assets/itendswithus copy.jpg";
 
 const TrendingBooks = () => {
   return (
@@ -11,11 +6,11 @@ const TrendingBooks = () => {
       <h1 className="bold text-2xl m-8">Trending Books</h1>
 
       <div className="flex justify-evenly items-center mx-64 gap-6 ">
-        <Card cover={meditations} price="10.99" />
-        <Card cover={ikigai} price="12.99" />
-        <Card cover={mdw} price="20.99" />
-        <Card cover={aliabdaal} price="15.99" />
-        <Card cover={itendswithus} price="29.99" />
+        <Card cover={211529} price="10.99" title={"Meditations"} />
+        <Card cover={14415077} price="12.99" title={"It ends with us"} />
+        <Card cover={12539702} price="20.99" title={"Atomic Habits"} />
+        <Card cover={8821052} price="15.99" title={"Ikigai"} />
+        <Card cover={6424160} price="29.99" title={"48 Laws of Power"} />
       </div>
     </div>
   );
