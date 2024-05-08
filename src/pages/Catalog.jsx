@@ -6,16 +6,6 @@ import "../index.css";
 import { useState } from "react";
 
 const Catalog = () => {
-  const categories = [
-    "Categories",
-    "romance",
-    "adventure",
-    "thriller",
-    "philosophy",
-    "non-fiction",
-    "fiction",
-  ];
-
   // states and fetching
 
   const [query, setQuery] = useState("");
@@ -52,22 +42,21 @@ const Catalog = () => {
             search
           </button>
         </div>
-        <div className="resultAndCategories flex justify-between items-center mx-8 mb-4 mt-12">
-          <h1 className="text-xl">RESULTS</h1>
-          <select
-            name="categories"
-            id="categories"
-            className="border border-slate-900 rounded-md px-4 py-1 customShadow"
-          >
-            {categories.map((category) => (
-              <option key={category} value={category} className="bg-beige-300">
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
+        <h1 className="text-xl mx-8 mb-2 mt-8 font-bold">RESULTS</h1>
         <hr style={{ border: "1.5px dashed black", margin: "34px" }} />
-        <div className="allBooks"></div>
+        <div className="allBooks grid grid-cols-6 p-2 gap-y-8 mx-2 my-4 min-h-[36rem]">
+          {data &&
+            data.docs.map((d, i) => (
+              <Card
+                cover={d.cover_i}
+                key={i}
+                price={
+                  Math.round((Math.random() * (20 - 5) + 5).toFixed(2)) + ".99"
+                } // generate random prices
+                title={d.title}
+              />
+            ))}
+        </div>
       </main>
       <Footer />
     </div>
