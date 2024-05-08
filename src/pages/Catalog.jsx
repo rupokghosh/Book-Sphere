@@ -4,12 +4,21 @@ import Search from "../components/Search.jsx";
 import Card from "../components/Card.jsx";
 import "../index.css";
 import { useState } from "react";
+import Loader from "../components/Loader.jsx";
+import Cart from "../components/Cart.jsx";
 
 const Catalog = () => {
   // states and fetching
 
   const [query, setQuery] = useState("");
   const [data, setdata] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+
+  // cart
+  function toggleCart() {
+    setOpenCart(!openCart);
+  }
 
   // fetch data on button click
 
@@ -20,18 +29,21 @@ const Catalog = () => {
   // fetchData function
 
   const fetchData = () => {
+    setLoading(true);
     console.log(query);
-    fetch(`https://openlibrary.org/search.json?q= ${query} &limit=20 `)
+    fetch(`https://openlibrary.org/search.json?q= ${query} &limit=24`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setdata(data);
+        setLoading(false);
       });
   };
 
   return (
     <div style={{ fontFamily: "Unica One" }}>
-      <Header />
+      <Header toggleCart={toggleCart} />
+      {openCart && <Cart />}
       <main>
         <div className="flex justify-center items-center self-center gap-4 mt-6">
           <Search setValue={setQuery} value={query} />
@@ -43,7 +55,8 @@ const Catalog = () => {
           </button>
         </div>
         <h1 className="text-xl mx-8 mb-2 mt-8 font-bold">RESULTS</h1>
-        <hr style={{ border: "1.5px dashed black", margin: "34px" }} />
+        <hr style={{ border: "1.5px beige-500", margin: "34px" }} />
+        <Loader state={loading} />
         <div className="allBooks grid grid-cols-6 p-2 gap-y-8 mx-2 my-4 min-h-[36rem]">
           {data &&
             data.docs.map((d, i) => (

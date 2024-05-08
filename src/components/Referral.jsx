@@ -1,4 +1,4 @@
-const Categories = () => {
+const Referral = () => {
   return (
     <div className="flex justify-evenly items-center mt-16 mb-12 mx-4 p-4">
       <div className="flex flex-col justify-center items-center gap-2 p-2">
@@ -28,4 +28,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default Referral;

@@ -2,7 +2,7 @@ import CartItem from "./cartItem";
 
 const Cart = () => {
   return (
-    <div className="absolute right-0 flex flex-col border-l border-b border-t rounded-l-lg gap-6 p-6 mt-4">
+    <div className="absolute right-0 flex flex-col border-l border-b border-t rounded-l-lg gap-6 p-6 mt-4 bg-beige-100">
       <h1 className="bold text-2xl">Your Cart</h1>
       <div className="cartItems flex flex-col gap-4">
         <CartItem />
