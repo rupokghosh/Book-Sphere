@@ -2,13 +2,12 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import TrendingBooks from "./components/TrendingBooks";
-import Categories from "./components/Categories";
+import Referral from "./components/Referral.jsx";
 import BestSellersThisWeek from "./components/BestSellersThisWeek";
 import CallToAction from "./components/CallToAction";
 import Cart from "./components/Cart.jsx";
 import "./index.css";
-import fetchData from "./utils/fetchData.js";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   // states
@@ -19,19 +18,13 @@ function App() {
     setOpenCart(!openCart);
   }
 
-  // fetchData
-
-  useEffect(() => {
-    fetchData("meditations");
-  }, []);
-
   return (
     <div className="main " style={{ fontFamily: "Unica One" }}>
       <Header toggleCart={toggleCart} />
       {openCart && <Cart />}
       <HeroSection />
       <TrendingBooks />
-      <Categories />
+      <Referral />
       <BestSellersThisWeek />
       <CallToAction />
       <Footer />
