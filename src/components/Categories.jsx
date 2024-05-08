@@ -1,25 +1,28 @@
-import CategoryBtn from "./CategoryBtn.jsx";
-import file from "../assets/FOLDER_NOTCH_OPEN.png";
-
 const Categories = () => {
-  const categories = [
-    "romance",
-    "adventure",
-    "thriller",
-    "philosophy",
-    "non-fiction",
-    "fiction",
-  ];
   return (
-    <div className="flex flex-col gap-4 mx-8 my-16">
-      <div className="flex gap-2 self-center mb-4 ">
-        <img src={file} alt="" />
-        <div className="text-2xl bold">Categories</div>
+    <div className="flex justify-evenly items-center mt-16 mb-12 mx-4 p-4">
+      <div className="flex flex-col justify-center items-center gap-2 p-2">
+        <h1 className="text-2xl font-bold">Do you love free books?</h1>
+        <p>
+          Earn points for every book you buy through our loyalty program. <br />
+          Redeem those points for more books which means more points.
+        </p>
+        <button className="customShadow py-2 px-2 border rounded-md hover:bg-beige-300">
+          Join Now
+        </button>
       </div>
-      <div className="grid grid-rows-2 grid-flow-col gap-8 mx-48">
-        {categories.map((category) => (
-          <CategoryBtn category={category} key={category} />
-        ))}
+
+      <div className="flex justify-center items-center">
+        <div className=" flex flex-col justify-center items-center border border-dashed rounded-md gap-2 p-4 ">
+          <h1 className="text-xl font-bold">Refer a friend</h1>
+          <p>
+            Refer your friends and you will both receive $10 in rewards. <br />
+            In the end, whats better than bonding over free books?
+          </p>
+          <button className="customShadow py-2 px-2 border rounded-md bg-white hover:bg-beige-500">
+            Refer
+          </button>
+        </div>
       </div>
     </div>
   );
