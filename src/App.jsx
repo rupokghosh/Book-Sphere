@@ -13,6 +13,14 @@ function App() {
   // states
   // Toggling Cart Logic
   const [openCart, setOpenCart] = useState(false);
+  const [cartData, setCartData] = useState([]);
+
+  // add to cart
+
+  function handleCart(title, author, cover_i, price) {
+    const newData = { title, price, cover_i, author };
+    setCartData([...cartData, newData]);
+  }
 
   function toggleCart() {
     setOpenCart(!openCart);
@@ -21,11 +29,11 @@ function App() {
   return (
     <div className="main " style={{ fontFamily: "Unica One" }}>
       <Header toggleCart={toggleCart} />
-      {openCart && <Cart />}
+      {openCart && <Cart cartData={cartData} />}
       <HeroSection />
-      <TrendingBooks />
+      <TrendingBooks handleCart={handleCart} />
       <Referral />
-      <BestSellersThisWeek />
+      <BestSellersThisWeek handleCart={handleCart} />
       <CallToAction />
       <Footer />
     </div>

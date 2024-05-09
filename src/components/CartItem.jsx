@@ -18,7 +18,7 @@ const cartItem = ({ title, author, price, cover }) => {
       />
       <div className="details flex flex-col justify-between p-2 ">
         <h1 className="font-bold">{title}</h1>
-        <h1>{`By ${firstAuthor} and co`}</h1>
+        <h1>{`By ${firstAuthor}`}</h1>
       </div>
       <div className="price flex flex-col justify-between p-2 ">
         <h1 className="text-beige-500"> $ {price}</h1>
