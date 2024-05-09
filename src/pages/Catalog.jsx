@@ -92,7 +92,7 @@ const Catalog = () => {
                     d.title,
                     d.author_name,
                     d.cover_i,
-                    randomPrices[d.key]
+                    parseFloat(randomPrices[d.key])
                   )
                 }
                 cover={d.cover_i}

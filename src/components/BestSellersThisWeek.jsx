@@ -6,31 +6,31 @@ const BestSellersThisWeek = ({ handleCart }) => {
     {
       title: "Elon Musk: Enterpreneur",
       cover: 13825519,
-      price: "9.99",
+      price: 9.99,
       author_name: "Elon Musk",
     },
     {
       title: "Crime and Punishment",
       cover: 11227994,
-      price: "12.99",
+      price: 12.99,
       author_name: "Fyodor Dostoevsky",
     },
     {
       title: "Sapiens",
       cover: 8634250,
-      price: "15.99",
+      price: 15.99,
       author_name: "Yuval Noah",
     },
     {
       title: "Feel Good Productivity",
       cover: 14557462,
-      price: "18.99",
+      price: 18.99,
       author_name: "Ali Abdaal",
     },
     {
       title: "The Outsider",
       cover: 8315581,
-      price: "6.99",
+      price: 6.99,
       author_name: "Stephen King",
     },
   ];
