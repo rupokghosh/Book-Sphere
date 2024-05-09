@@ -3,7 +3,7 @@ import Footer from "../components/Footer.jsx";
 import Search from "../components/Search.jsx";
 import Card from "../components/Card.jsx";
 import "../index.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Loader from "../components/Loader.jsx";
 import Cart from "../components/Cart.jsx";
 
@@ -15,6 +15,20 @@ const Catalog = () => {
   const [loading, setLoading] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const [cartData, setCartData] = useState([]);
+  const [randomPrices, setRandomPrices] = useState({});
+
+  useEffect(() => {
+    if (data) {
+      const prices = {};
+      data.docs.forEach((d) => {
+        prices[d.key] = (
+          Math.floor((Math.random() * (20 - 5) + 5) * 10) / 10 +
+          0.99
+        ).toFixed(2);
+      });
+      setRandomPrices(prices);
+    }
+  }, [data]);
 
   // add to cart
 
@@ -64,6 +78,11 @@ const Catalog = () => {
         <h1 className="text-xl mx-8 mb-2 mt-8 font-bold">RESULTS</h1>
         <hr style={{ border: "1.5px beige-500", margin: "34px" }} />
         <Loader state={loading} />
+        {(query === "" || (data && data.docs.length === 0)) && (
+          <p className="text-center text-2xl font-bold mt-32 text-beige-500">
+            Search for your favorite book to display results
+          </p>
+        )}
         <div className="allBooks grid grid-cols-6 p-2 gap-y-8 mx-2 my-4 min-h-[36rem]">
           {data &&
             data.docs.map((d, i) => (
@@ -73,14 +92,12 @@ const Catalog = () => {
                     d.title,
                     d.author_name,
                     d.cover_i,
-                    Math.round((Math.random() * (20 - 5) + 5) * 100) / 100
+                    randomPrices[d.key]
                   )
                 }
                 cover={d.cover_i}
                 key={i}
-                price={
-                  Math.round((Math.random() * (20 - 5) + 5).toFixed(2)) + ".99"
-                } // generate random prices
+                price={randomPrices[d.key]} // generate random prices
                 title={d.title}
               />
             ))}
