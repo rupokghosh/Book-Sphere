@@ -14,8 +14,15 @@ const Catalog = () => {
   const [data, setdata] = useState(null);
   const [loading, setLoading] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const [cartData, setCartData] = useState([]);
 
-  // cart
+  // add to cart
+
+  function handleCart(title, author, cover_i, price) {
+    const newData = { title, price, cover_i, author };
+    setCartData([...cartData, newData]);
+  }
+  // toggling cart
   function toggleCart() {
     setOpenCart(!openCart);
   }
@@ -43,7 +50,7 @@ const Catalog = () => {
   return (
     <div style={{ fontFamily: "Unica One" }}>
       <Header toggleCart={toggleCart} />
-      {openCart && <Cart />}
+      {openCart && <Cart cartData={cartData} />}
       <main>
         <div className="flex justify-center items-center self-center gap-4 mt-6">
           <Search setValue={setQuery} value={query} />
@@ -61,6 +68,14 @@ const Catalog = () => {
           {data &&
             data.docs.map((d, i) => (
               <Card
+                handleCart={() =>
+                  handleCart(
+                    d.title,
+                    d.author_name,
+                    d.cover_i,
+                    Math.round((Math.random() * (20 - 5) + 5) * 100) / 100
+                  )
+                }
                 cover={d.cover_i}
                 key={i}
                 price={
