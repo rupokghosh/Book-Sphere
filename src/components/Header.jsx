@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/BookOpen.png";
-import favoritesIcon from "../assets/BOOKMARK_SIMPLE.png";
 import shoppingCartIcon from "../assets/SHOPPING_CART.png";
 import search from "../assets/MAGNIFYING_GLASS.png";
 
@@ -17,9 +16,6 @@ const Header = ({ toggleCart }) => {
       <div className="navLinks flex flex-row gap-6 justify-evenly items-center">
         <Link to="/Catalog">
           <img src={search} alt="" />
-        </Link>
-        <Link to="/Favorites">
-          <img src={favoritesIcon} alt="" />
         </Link>
         <button onClick={toggleCart}>
           <img src={shoppingCartIcon} alt="" />

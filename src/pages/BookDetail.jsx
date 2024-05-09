@@ -1,6 +1,5 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import a from "../assets/aliabdaal.jpg";
 import bookMark from "../assets/BOOKMARK_SIMPLE.png";
 import shoppingCart from "../assets/SHOPPING_CART.png";
 
@@ -10,7 +9,7 @@ const BookDetail = () => {
       <Header />
       <main className="flex justify-center items-center my-32 gap-32 px-32 mx-32">
         <img
-          src={a}
+          src=""
           alt=""
           className="object-cover rounded-lg shadow-xl w-64 h-80"
         />
