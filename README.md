@@ -1,8 +1,12 @@
-# React + Vite
+# Book Sphere
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Book Sphere is a simple yet sophisticated e-commerce website that sells all kind of books. This project is created using
+React and TailwindCSS.
 
-Currently, two official plugins are available:
+![Screenshot](image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Details about the project
+
+- Vast selection of books across various genres fetched using the OpenLibrary API
+- User-Friendly Interface designed to be intuitive and easy to navigate, allowing you to browse, search, and discover books effortlessly.
+- SPA which automatically means minimal loading times.
