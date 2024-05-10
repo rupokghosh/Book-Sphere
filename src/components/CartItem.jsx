@@ -1,6 +1,6 @@
 import deleteIcon from "../assets/TRASH.png";
 
-const cartItem = ({ title, author, price, cover }) => {
+const cartItem = ({ title, author, price, cover, onDelete }) => {
   // Splitting the author's name by commas to separate multiple authors
   const authors = author.toString().split(",");
   // Extracting the first author from the list
@@ -22,7 +22,7 @@ const cartItem = ({ title, author, price, cover }) => {
       </div>
       <div className="price flex flex-col justify-between p-2 ">
         <h1 className="text-beige-500"> $ {price}</h1>
-        <button>
+        <button onClick={onDelete}>
           <img src={deleteIcon} alt="" />
         </button>
       </div>
