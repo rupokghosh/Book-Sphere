@@ -1,6 +1,4 @@
 import shoppingCart from "../assets/SHOPPING_CART.png";
-import { Link } from "react-router-dom";
-
 // eslint-disable-next-line react/prop-types
 const Card = ({ cover, price, title, handleCart }) => {
   return (

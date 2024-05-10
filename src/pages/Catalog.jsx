@@ -31,7 +31,6 @@ const Catalog = () => {
   }, [data]);
 
   // add to cart
-
   function handleCart(title, author, cover_i, price) {
     const newData = { title, price, cover_i, author };
     setCartData([...cartData, newData]);
@@ -42,13 +41,11 @@ const Catalog = () => {
   }
 
   // fetch data on button click
-
   function handleBtnClick() {
     fetchData();
   }
 
   // fetchData function
-
   const fetchData = () => {
     setLoading(true);
     console.log(query);
