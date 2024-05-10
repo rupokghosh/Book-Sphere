@@ -14,9 +14,10 @@ const Cart = ({ cartData }) => {
   }
 
   //Calculate subtotal
-  const subtotal = useMemo(() => {
+  let subtotal = useMemo(() => {
     return cartData.reduce((total, item) => total + item.price, 0);
   }, [cartData]);
+  subtotal = subtotal.toFixed(2);
   return (
     <div className="absolute right-0 flex flex-col border-l border-b border-t rounded-l-lg gap-6 p-6 mt-4 bg-beige-100">
       <h1 className="bold text-2xl">Your Cart</h1>
