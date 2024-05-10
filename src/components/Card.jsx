@@ -1,4 +1,5 @@
 import shoppingCart from "../assets/SHOPPING_CART.png";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ cover, price, title, handleCart }) => {
@@ -13,6 +14,7 @@ const Card = ({ cover, price, title, handleCart }) => {
         }
         alt=""
       />
+
       <div className="flex justify-center items-center gap-2">
         <h1 className="text-md text-center font-bold">{title}</h1>
         <button className="text-beige-500">{`$ ${price}`}</button>
