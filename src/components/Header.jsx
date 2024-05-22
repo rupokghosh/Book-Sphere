@@ -20,6 +20,7 @@ const Header = ({ toggleCart }) => {
         <button onClick={toggleCart}>
           <img src={shoppingCartIcon} alt="" />
         </button>
+        <Link to="/Login" className="customShadow py-2 px-2 border rounded-md hover:bg-beige-300">Sign-up/Login</Link>
       </div>
     </div>
   );
